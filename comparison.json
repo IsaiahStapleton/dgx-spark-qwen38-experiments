@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "metric": "end-to-end completion tokens per second",
+  "experiments": [
+    {
+      "id": "sglang-nvfp4-dflash2",
+      "sequential_mean": 34.18,
+      "c2_aggregate": null,
+      "c4_aggregate": null,
+      "tradeoff": "Fastest controlled single-request result; no controlled concurrency cohorts."
+    },
+    {
+      "id": "vllm-fp8-mtp-balanced",
+      "sequential_mean": 18.865,
+      "c2_aggregate": 38.82,
+      "c4_aggregate": 64.59,
+      "tradeoff": "FP8 checkpoint; 28.95 GiB loaded model footprint."
+    },
+    {
+      "id": "vllm-nvfp4-mtp-balanced",
+      "sequential_mean": 19.515,
+      "c2_aggregate": 37.54,
+      "c4_aggregate": 70.46,
+      "tradeoff": "24.97 GiB loaded model footprint; mixed change versus FP8 across concurrent cohorts."
+    },
+    {
+      "id": "vllm-nvfp4-mtp-throughput",
+      "sequential_mean": 22.295,
+      "c2_aggregate": 45.32,
+      "c4_aggregate": 79.40,
+      "tradeoff": "Best tested vLLM throughput; throughput scheduler mode favors aggregate serving performance."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-08-27T01:23:10.122Z",
+  "container_name": "qwen3.8-27b-vllm-fp8-test",
+  "image": "vllm/vllm-openai:qwen38",
+  "model": "Qwen/Qwen3.8-27B-FP8",
+  "served_model_name": "qwen3.8-27b-sglang",
+  "docker": {
+    "gpus": "all",
+    "ipc": "host",
+    "port_binding": "127.0.0.1:8888:8888",
+    "mounts": [
+      "/home/redhat-et/Qwen3.8-27B-SGLang-DGX-Spark/.cache/huggingface:/root/.cache/huggingface"
+    ]
+  },
+  "vllm_arguments": [
+    "Qwen/Qwen3.8-27B-FP8",
+    "--served-model-name", "qwen3.8-27b-sglang",
+    "--host", "0.0.0.0",
+    "--port", "8888",
+    "--tensor-parallel-size", "1",
+    "--gpu-memory-utilization", "0.80",
+    "--max-model-len", "262144",
+    "--kv-cache-dtype", "fp8",
+    "--reasoning-parser", "qwen3",
+    "--enable-auto-tool-choice",
+    "--tool-call-parser", "qwen3_coder",
+    "--speculative-config", "{\"method\":\"mtp\",\"num_speculative_tokens\":3}"
+  ],
+  "effective_runtime": {
+    "performance_mode": "balanced (default)",
+    "prefix_caching": true,
+    "chunked_prefill": true,
+    "max_num_batched_tokens": 2048,
+    "model_loading_gib": 28.95,
+    "available_kv_cache_gib": 60.33,
+    "kv_cache_tokens": 1701739,
+    "max_full_context_concurrency": 6.49,
+    "torch_compile_backbone_seconds": 84.54,
+    "torch_compile_mtp_head_seconds": 8.06
+  }
+}

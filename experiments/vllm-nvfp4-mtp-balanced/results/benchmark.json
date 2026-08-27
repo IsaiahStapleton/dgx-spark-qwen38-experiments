@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "experiment": "vllm-nvfp4-mtp-balanced",
+  "recorded_at_utc": [
+    "2026-08-27T01:40:52.295Z",
+    "2026-08-27T01:41:54.921Z"
+  ],
+  "source_event_ordinals": [2494, 2507],
+  "endpoint": "http://127.0.0.1:8888/v1/completions",
+  "model": "qwen3.8-27b-sglang",
+  "sampling": {"temperature": 0, "ignore_eos": true},
+  "prompts": {
+    "sequential": "Continue this sequence with only space-separated integers: 1 2 3 4 5 6 7 8 9 10",
+    "concurrent_template": "Continue this sequence with only space-separated integers (stream <index>): 1 2 3 4 5 6 7 8 9 10"
+  },
+  "measurements": {
+    "warmup": {"completion_tokens": 32, "elapsed_seconds": 2.890, "tokens_per_second": 11.07, "finish_reason": "length"},
+    "sequential": [
+      {"completion_tokens": 512, "elapsed_seconds": 26.198, "tokens_per_second": 19.54, "finish_reason": "length"},
+      {"completion_tokens": 512, "elapsed_seconds": 26.271, "tokens_per_second": 19.49, "finish_reason": "length"}
+    ],
+    "concurrent": {
+      "2": {
+        "concurrency": 2,
+        "requests": [
+          {"completion_tokens": 512, "tokens_per_second": 22.31},
+          {"completion_tokens": 512, "tokens_per_second": 18.77}
+        ],
+        "wall_seconds": 27.280,
+        "aggregate_tokens_per_second": 37.54
+      },
+      "4": {
+        "concurrency": 4,
+        "requests": [
+          {"completion_tokens": 512, "tokens_per_second": 18.87},
+          {"completion_tokens": 512, "tokens_per_second": 17.62},
+          {"completion_tokens": 512, "tokens_per_second": 19.67},
+          {"completion_tokens": 512, "tokens_per_second": 22.55}
+        ],
+        "wall_seconds": 29.067,
+        "aggregate_tokens_per_second": 70.46
+      }
+    }
+  },
+  "summary": {
+    "sequential_mean_tokens_per_second": 19.515,
+    "c2_aggregate_tokens_per_second": 37.54,
+    "c4_aggregate_tokens_per_second": 70.46
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "experiment": "sglang-nvfp4-dflash2",
+  "source_event_ordinals": [1856],
+  "classification": "mixed organic server-log telemetry; not a controlled benchmark",
+  "by_running_requests": [
+    {"running_requests": 1, "samples": 3455, "average_generation_tokens_per_second": 24.61, "minimum": 0.25, "maximum": 59.26},
+    {"running_requests": 2, "samples": 5, "average_generation_tokens_per_second": 25.00, "minimum": 0.00, "maximum": 61.76}
+  ],
+  "single_request_by_context_tokens": [
+    {"range": "<20000", "samples": 104, "average_generation_tokens_per_second": 22.07, "minimum": 2.73, "maximum": 45.57},
+    {"range": "20000-49999", "samples": 418, "average_generation_tokens_per_second": 24.17, "minimum": 0.42, "maximum": 58.40},
+    {"range": "50000-99999", "samples": 858, "average_generation_tokens_per_second": 25.49, "minimum": 0.62, "maximum": 59.26},
+    {"range": ">=100000", "samples": 2075, "average_generation_tokens_per_second": 24.46, "minimum": 0.25, "maximum": 55.49}
+  ]
+}

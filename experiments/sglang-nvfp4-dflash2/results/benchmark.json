@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "experiment": "sglang-nvfp4-dflash2",
+  "recorded_at_utc": ["2026-08-27T01:22:15.315Z"],
+  "source_event_ordinals": [2182],
+  "endpoint": "http://127.0.0.1:8888/v1/completions",
+  "model": "qwen3.8-27b-sglang",
+  "sampling": {"temperature": 0, "ignore_eos": true},
+  "prompts": {
+    "sequential": "Continue this sequence with only space-separated integers: 1 2 3 4 5 6 7 8 9 10"
+  },
+  "measurements": {
+    "warmup": {"completion_tokens": 32, "elapsed_seconds": 0.767, "tokens_per_second": 41.71, "finish_reason": "length"},
+    "sequential": [
+      {"completion_tokens": 512, "elapsed_seconds": 14.600, "tokens_per_second": 35.07, "finish_reason": "length"},
+      {"completion_tokens": 512, "elapsed_seconds": 15.382, "tokens_per_second": 33.29, "finish_reason": "length"}
+    ],
+    "concurrent": {}
+  },
+  "summary": {
+    "sequential_mean_tokens_per_second": 34.18,
+    "c2_aggregate_tokens_per_second": null,
+    "c4_aggregate_tokens_per_second": null
+  }
+}

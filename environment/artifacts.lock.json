@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "id": "Qwen/Qwen3.8-27B-FP8",
+      "resolved_revision": "017b9c7af6b5689d5dd426a76e0bc077eb5ca20a",
+      "architecture": "Qwen3_5ForConditionalGeneration",
+      "quantization": "FP8 e4m3, dynamic activation, 128x128 weight blocks"
+    },
+    {
+      "id": "Inferact/Qwen3.8-27B-NVFP4",
+      "resolved_revision": "6128240ebaf4eaa7bad2b3d1c72c37d677c5f462",
+      "architecture": "Qwen3_5ForConditionalGeneration",
+      "quantization": "ModelOpt NVFP4"
+    },
+    {
+      "id": "RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+      "resolved_revision": "009632fef96dd349150baa780c984e62e70e91fe",
+      "architecture": "Qwen3_5ForConditionalGeneration",
+      "quantization": "ModelOpt mixed precision: NVFP4 with BF16 LM head"
+    },
+    {
+      "id": "z-lab/Qwen3.8-27B-DFlash2",
+      "resolved_revision": "50307d4c4cde6860d4eee73e2547cd786fe8e8a4",
+      "architecture": "DFlash2DraftModel",
+      "quantization": "Unquantized BF16 draft model"
+    }
+  ],
+  "images": [
+    {
+      "name": "vllm/vllm-openai:qwen38",
+      "id": "sha256:2a6de0b03f973f931bcc072e517d94ae6048545a317d8b93ddd75ccaa9144a07",
+      "repo_digest": "vllm/vllm-openai@sha256:4a2f33a884222f7049b983263ad9976f89452bb81affecf5b67d89ad35c1bc31",
+      "architecture": "arm64",
+      "vllm": "0.1.dev19754+g3a0914114",
+      "source_commit": "3a0914114705fa38d4c3171d0746c1a6b6f10209",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.15.0"
+    },
+    {
+      "name": "lmsysorg/sglang:dev-qwen38-27b-dflash2",
+      "id": "sha256:60166a99b6610e2b4b3febbeb6411e4cbc9338e996ab6c80d3339f86a7b5b9c3",
+      "repo_digest": "lmsysorg/sglang@sha256:616a3e97f45191af975896cfa644279096cb31bd408a071c2e99ca7209c3cafe",
+      "architecture": "arm64",
+      "sglang": "0.0.0.dev1+g5f55db35e",
+      "source_commit": "5f55db35e926d50676f75b812640ea2410b0fe0e",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.12.1"
+    }
+  ],
+  "sglang_launcher": {
+    "repository": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark.git",
+    "commit": "751e29eb6a3057ccfd8f992f87dfc260787e05a1"
+  }
+}
